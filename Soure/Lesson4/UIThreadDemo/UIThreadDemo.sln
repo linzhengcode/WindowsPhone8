@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIThreadDemo", "UIThreadDemo\UIThreadDemo.csproj", "{71C18FC4-7689-4AA0-AE5C-29527DF949DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|ARM.Build.0 = Debug|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|x86.ActiveCfg = Debug|x86
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|x86.Build.0 = Debug|x86
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Debug|x86.Deploy.0 = Debug|x86
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|ARM.ActiveCfg = Release|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|ARM.Build.0 = Release|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|ARM.Deploy.0 = Release|ARM
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|x86.ActiveCfg = Release|x86
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|x86.Build.0 = Release|x86
+		{71C18FC4-7689-4AA0-AE5C-29527DF949DC}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
