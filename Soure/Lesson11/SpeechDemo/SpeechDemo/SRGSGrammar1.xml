@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar version="1.0" xml:lang="zh-cn" root="mediaMenu" tag-format="semantics/1.0" 
+         xmlns="http://www.w3.org/2001/06/grammar" 
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <!--用于显示语法的示例 SRGS 语法。
+      该规则元素定义语法规则。规则元素
+      包含文本或 XML 元素，用于定义发言者可以
+      说的内容以及内容顺序。-->
+
+  <rule id="genres" scope="public">
+    <one-of>
+      <item> 蓝调音乐 </item>
+      <item> 古典音乐 </item>
+      <item> 福音音乐 </item>
+      <item> 爵士乐 </item>
+      <item> 摇滚乐 </item>
+    </one-of>
+  </rule>
+
+  <rule id="mediaMenu" scope="public">
+    查找
+
+    <!--在需要使规则扩展成为可选或可重复项时(即，在必须使用重复属性时)，
+        使用项元素来包含规则扩展。
+        项元素中的重复属性指示一个元素中的词可以被提及
+        零次或一次（可选）-->
+    <one-of>
+      <item repeat-prob="0.2"> 专辑 </item>
+      <item> 艺术家 </item>
+    </one-of>
+
+    <item repeat="0-1"> 在...中 </item>
+    <!--ruleref 元素采用相同语法或外部语法来
+        指定包含规则对另一规则的	引用。引用的规则定义必须匹配才能
+        成功识别包含规则的用户输入。此元素在重用包含
+        不频繁更改的内容的规则和语法时特别有用，例如
+        城市列表或用于识别电话号码的规则。-->
+    <item>
+      <ruleref uri="#genres"/>
+      <tag>out.music=rules.latest();</tag>
+    </item>
+    <item repeat="0-1"> 分类 </item>
+
+  </rule>
+
+
+
+</grammar>
