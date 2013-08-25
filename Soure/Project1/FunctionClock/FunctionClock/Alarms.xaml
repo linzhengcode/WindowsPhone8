@@ -1,0 +1,91 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FunctionClock.Alarms"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    xmlns:Toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP8"
+    xmlns:Interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:Converter="clr-namespace:FunctionClock.Converters"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    DataContext="{Binding Alarms, Source={StaticResource Locator}}">
+    <phone:PhoneApplicationPage.Resources>
+        <Converter:RepeatDaysOfWeekConverter x:Key="RepeatDaysOfWeekConverter"></Converter:RepeatDaysOfWeekConverter>
+    </phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="多功能时钟" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="闹铃列表" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <phone:LongListSelector ItemsSource="{Binding Alarms}" Height="500" IsGroupingEnabled="False" LayoutMode="List">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Toolkit:ToggleSwitch
+                                IsChecked="{Binding Enable}"
+                                Header="{Binding WakeTime}"
+                                Content="{Binding RepeatDaysOfWeek,Converter={StaticResource RepeatDaysOfWeekConverter}}">
+                                <Interactivity:Interaction.Triggers>
+                                    <Interactivity:EventTrigger EventName="Click">
+                                        <Command:EventToCommand
+                                            Command="{Binding Alarms.EnableAlarmCommand,
+                                            Source={StaticResource Locator}}"
+                                            CommandParameter="{Binding}"
+                                            ></Command:EventToCommand>
+                                    </Interactivity:EventTrigger>
+                                </Interactivity:Interaction.Triggers>
+                            </Toolkit:ToggleSwitch>
+                            <Toolkit:ContextMenuService.ContextMenu>
+                                <Toolkit:ContextMenu>
+                                    <Toolkit:MenuItem Header="删除">
+                                        <Interactivity:Interaction.Triggers>
+                                            <Interactivity:EventTrigger EventName="Click">
+                                                <Command:EventToCommand
+                                            Command="{Binding Alarms.DeleteAlarmCommand,
+                                            Source={StaticResource Locator}}"
+                                            CommandParameter="{Binding}"
+                                            ></Command:EventToCommand>
+                                            </Interactivity:EventTrigger>
+                                        </Interactivity:Interaction.Triggers>
+                                    </Toolkit:MenuItem>
+                                    <Toolkit:MenuItem Header="编辑">
+                                        <Interactivity:Interaction.Triggers>
+                                            <Interactivity:EventTrigger EventName="Click">
+                                                <Command:EventToCommand
+                                            Command="{Binding Alarms.EditAlarmCommand,
+                                            Source={StaticResource Locator}}"
+                                            CommandParameter="{Binding}"
+                                            ></Command:EventToCommand>
+                                            </Interactivity:EventTrigger>
+                                        </Interactivity:Interaction.Triggers>
+                                    </Toolkit:MenuItem>
+                                </Toolkit:ContextMenu>
+         
+                            </Toolkit:ContextMenuService.ContextMenu>
+                        </StackPanel>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+
+            </phone:LongListSelector>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

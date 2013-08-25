@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Countries>
+  <Country>
+    <Name>Germany</Name>
+    <Flag>../Images/Germany.png</Flag>
+    <ID>1</ID>
+    <Description>Germany Description</Description>
+    <Capital>Berlin</Capital>
+  </Country>
+  <Country>
+    <Name>Greece</Name>
+    <Flag>../Images/Greece.png</Flag>
+    <ID>2</ID>
+    <Description>Greece Description</Description>
+    <Capital>Athens</Capital>
+  </Country>
+  <Country>
+    <Name>United Kingdom</Name>
+    <Flag>../Images/UK.png</Flag>
+    <ID>3</ID>
+    <Description>UK Description</Description>
+    <Capital>London</Capital>
+  </Country>
+  <Country>
+    <Name>Spain</Name>
+    <Flag>../Images/Spain.png</Flag>
+    <ID>4</ID>
+    <Description>Spain Description</Description>
+    <Capital>Madrid</Capital>
+  </Country>
+  <Country>
+    <Name>France</Name>
+    <Flag>../Images/France.png</Flag>
+    <ID>5</ID>
+    <Description>France Description</Description>
+    <Capital>Paris</Capital>
+  </Country>
+  <Country>
+    <Name>Iceland</Name>
+    <Flag>../Images/Iceland.png</Flag>
+    <ID>6</ID>
+    <Description>Iceland Description</Description>
+    <Capital>Reykjavík</Capital>
+  </Country>
+  <Country>
+    <Name>Italy</Name>
+    <Flag>../Images/Italy.png</Flag>
+    <ID>7</ID>
+    <Description>Italy Description</Description>
+    <Capital>Rome</Capital>
+  </Country>
+  <Country>
+    <Name>Netherlands</Name>
+    <Flag>../Images/Netherlands.png</Flag>
+    <ID>8</ID>
+    <Description>Netherlands Description</Description>
+    <Capital>Amsterdam</Capital>
+  </Country>
+  <Country>
+    <Name>Northern Ireland</Name>
+    <Flag>../Images/Northern-Ireland.png</Flag>
+    <ID>9</ID>
+    <Description>Northern Ireland Description</Description>
+    <Capital>Belfast</Capital>
+  </Country>
+  <Country>
+    <Name>Poland</Name>
+    <Flag>../Images/Poland.png</Flag>
+    <ID>10</ID>
+    <Description>Poland Description</Description>
+    <Capital>Warsaw</Capital>
+  </Country>
+  <Country>
+    <Name>Portugal</Name>
+    <Flag>../Images/Portugal.png</Flag>
+    <ID>11</ID>
+    <Description>Portugal Description</Description>
+    <Capital>Lisbon</Capital>
+  </Country>
+  <Country>
+    <Name>Scotland</Name>
+    <Flag>../Images/Scotland.png</Flag>
+    <ID>12</ID>
+    <Description>Scotland Description</Description>
+    <Capital>Edinburgh</Capital>
+  </Country>
+  <Country>
+    <Name>Switzerland</Name>
+    <Flag>../Images/Switzerland.png</Flag>
+    <ID>13</ID>
+    <Description>Switzerland Description</Description>
+    <Capital>Bern</Capital>
+  </Country>
+</Countries>

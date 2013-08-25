@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI" 
+    x:Class="ScrawlNote.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Converter="clr-namespace:ScrawlNote.Converter"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <Converter:ColorNameToBrushConverter  x:Key="ColorNameToBrushConverter"></Converter:ColorNameToBrushConverter>
+    </phone:PhoneApplicationPage.Resources>
+    <Grid>
+    <phone:Pivot x:Name="pivot" Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.NotesList, Source={StaticResource LocalizedStrings}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Image x:Name="searchIm2" Grid.Column="0" Grid.Row="0" Source="/Images/appbar.feature.search.rest.png" Visibility="Collapsed" Stretch="Uniform" HorizontalAlignment="Left" />
+                <Image x:Name="searchIm2Light" Grid.Column="0" Grid.Row="0" Source="/Images/appbar.feature.search.restLight.png" Visibility="Collapsed" Stretch="Uniform" HorizontalAlignment="Left" />
+                <TextBox x:Name="searchTxt2" Grid.Column="1" Grid.Row="0" TextChanged="TextBox_TextChanged" Visibility="Collapsed" />
+                <phone:LongListSelector x:Name="listView2"  Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding NotFavoriteNotes}" IsGroupingEnabled="False" LayoutMode="List">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10,10,10,0" Tap="PostItControl_Tap" DataContext="{Binding}" Background="{Binding Color, Converter={StaticResource ColorNameToBrushConverter}}">
+                                <TextBlock Margin="10,10,10,0" Text="{Binding Title}" Foreground="Black" FontSize="30"/>
+                                <TextBlock Margin="10,10,10,0" Text="{Binding Date}" Foreground="Black" FontSize="20"   HorizontalAlignment="Right" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </Grid>
+        </phone:PivotItem>
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.Favorite, Source={StaticResource LocalizedStrings}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Image x:Name="searchIm" Grid.Column="0" Grid.Row="0" Source="/Images/appbar.feature.search.rest.png" Visibility="Collapsed" Stretch="Uniform" HorizontalAlignment="Left" />
+                <Image x:Name="searchImLight" Grid.Column="0" Grid.Row="0" Source="/Images/appbar.feature.search.restLight.png" Visibility="Collapsed" Stretch="Uniform" HorizontalAlignment="Left" />
+                <TextBox x:Name="searchTxt" Grid.Column="1" Grid.Row="0" TextChanged="TextBox_TextChanged" Visibility="Collapsed" />
+                <phone:LongListSelector x:Name="listView" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding FavoriteNotes}" IsGroupingEnabled="False"  LayoutMode="List">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10,10,10,0" Tap="PostItControl_Tap" DataContext="{Binding}" Background="{Binding Color, Converter={StaticResource ColorNameToBrushConverter}}">
+                                <TextBlock Margin="10,10,10,0" Text="{Binding Title}" Foreground="Black" FontSize="30" />
+                                <TextBlock Margin="10,10,10,0" Text="{Binding Date}" Foreground="Black" FontSize="20"  HorizontalAlignment="Right"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </Grid>
+        </phone:PivotItem>
+    </phone:Pivot>
+    <StackPanel VerticalAlignment="Bottom">
+        <UI:AdControl AdUnitId="Image480_80" ApplicationId="test_client"  Width="480" Height="80"/>
+    </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

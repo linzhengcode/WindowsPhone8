@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Phone
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundAudioDemo", "BackgroundAudioDemo\BackgroundAudioDemo.csproj", "{E4D6BEC6-420B-4039-800F-B7434EF2AE85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioPlaybackAgent1", "AudioPlaybackAgent1\AudioPlaybackAgent1.csproj", "{7BCC822A-DF83-41D1-99E2-712588D1BBB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|ARM.Build.0 = Debug|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|x86.ActiveCfg = Debug|x86
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|x86.Build.0 = Debug|x86
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Debug|x86.Deploy.0 = Debug|x86
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|ARM.ActiveCfg = Release|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|ARM.Build.0 = Release|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|ARM.Deploy.0 = Release|ARM
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|x86.ActiveCfg = Release|x86
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|x86.Build.0 = Release|x86
+		{E4D6BEC6-420B-4039-800F-B7434EF2AE85}.Release|x86.Deploy.0 = Release|x86
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|ARM.Build.0 = Debug|ARM
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|x86.ActiveCfg = Debug|x86
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Debug|x86.Build.0 = Debug|x86
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|ARM.ActiveCfg = Release|ARM
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|ARM.Build.0 = Release|ARM
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|x86.ActiveCfg = Release|x86
+		{7BCC822A-DF83-41D1-99E2-712588D1BBB5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

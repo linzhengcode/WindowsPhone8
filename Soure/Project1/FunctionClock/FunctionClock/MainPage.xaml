@@ -1,0 +1,58 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FunctionClock.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Converter="clr-namespace:FunctionClock.Converters"
+    xmlns:Control="clr-namespace:FunctionClock"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <phone:PhoneApplicationPage.Resources>
+        <Converter:DayOfWeekToOpacityConverter x:Key="DayOfWeekToOpacityConverter"></Converter:DayOfWeekToOpacityConverter>
+        <Converter:BoolToVisiblityConverter x:Key="BoolToVisiblityConverter"></Converter:BoolToVisiblityConverter>
+        <Converter:ColorToBrushConverter x:Key="ColorToBrushConverter"></Converter:ColorToBrushConverter>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Visibility="{Binding Setting.WeatherEnable,Converter={StaticResource BoolToVisiblityConverter}}"  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Control:WeatherControl x:Name="weatherControl"></Control:WeatherControl>
+            </StackPanel>
+            <StackPanel  Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Time}" Foreground="{Binding Setting.DispalyColor,Converter={StaticResource ColorToBrushConverter}}" FontSize="120"></TextBlock>
+                <StackPanel Margin="20,0,0,0">
+                    <TextBlock Text="{Binding TimeOfDay}" FontSize="30"></TextBlock>
+                    <TextBlock Text="{Binding Seconds}" Visibility="{Binding Setting.ShowSeconds,Converter={StaticResource BoolToVisiblityConverter}}"   FontSize="50"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="1"  Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="周日" Opacity="{Binding DayOfWeek,ConverterParameter=0,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周一" Opacity="{Binding DayOfWeek,ConverterParameter=1,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周二" Opacity="{Binding DayOfWeek,ConverterParameter=2,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周三" Opacity="{Binding DayOfWeek,ConverterParameter=3,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周四" Opacity="{Binding DayOfWeek,ConverterParameter=4,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周五" Opacity="{Binding DayOfWeek,ConverterParameter=5,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+            <TextBlock Text="周六" Opacity="{Binding DayOfWeek,ConverterParameter=6,Converter={StaticResource DayOfWeekToOpacityConverter}}" Width="50"></TextBlock>
+        </StackPanel>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

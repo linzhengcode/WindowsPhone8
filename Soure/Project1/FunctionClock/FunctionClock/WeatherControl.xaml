@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="FunctionClock.WeatherControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480"
+     DataContext="{Binding Weather, Source={StaticResource Locator}}">
+
+    <Grid x:Name="LayoutRoot" Height="50" Visibility="{Binding ShowWeaher}" >
+        <StackPanel Orientation="Horizontal" DataContext="{Binding Weather}">
+            <TextBlock Text="地区："></TextBlock>
+            <TextBlock Text="{Binding Area}" MaxWidth="150"></TextBlock>
+            <TextBlock Text=" 温度"></TextBlock>
+            <TextBlock Text="{Binding Temp}"></TextBlock>
+            <TextBlock Text="F"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
